@@ -15,8 +15,9 @@ var request = require('sync-request');
 var artsort = require('./artsort');
 var data = request('GET', 'https://www.reddit.com/r/javascript/.json').getBody('utf8');
 console.log(artsort(data, 'aggregate', {field: 'created_utc', ascending: false},
-console.log(artsort(data, 'sort', {field: 'score', ascending: true}, 'csv', {delimiter: '; '}));
   'sql', {table: 'art', fields: ['domain', 'articles', 'score']}));
+console.log('');
+console.log(artsort(data, 'sort', {field: 'score', ascending: true}, 'csv', {delimiter: '; '}));
 ```
 
 ### Input data
@@ -39,15 +40,12 @@ params - possible {table: 'xxx', fields: [...]} for SQL or {delimiter: '?'} for 
 
 ```sql
 INSERT INTO art (domain,articles,score) VALUES ('self.javascript',14,72);
-INSERT INTO art (domain,articles,score) VALUES ('asep.co',1,24);
-INSERT INTO art (domain,articles,score) VALUES ('github.com',2,9);
-INSERT INTO art (domain,articles,score) VALUES ('medium.com',4,310);
-INSERT INTO art (domain,articles,score) VALUES ('doclets.io',1,2);
-INSERT INTO art (domain,articles,score) VALUES ('youtube.com',1,1);
-INSERT INTO art (domain,articles,score) VALUES ('educative.io',1,12);
-INSERT INTO art (domain,articles,score) VALUES ('houssein.me',1,7);
-INSERT INTO art (domain,articles,score) VALUES ('notes.almccann.com',1,0);
+...
 INSERT INTO art (domain,articles,score) VALUES ('closuretools.blogspot.com',1,1);
+
+"4rayhi"; "[GAS] need help writing data to spreadsheet and then displaying that data as templated html."; "05.07.2016 04:24:04"; 0
+...
+"4r21rl"; "webpack: It’s getting real"; "03.07.2016 13:42:13"; 166
 ```
 
 ### Tests
