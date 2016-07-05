@@ -1,0 +1,20 @@
+﻿{
+  "name": "artsort",
+  "version": "1.0.0",
+  "description": "Article sort",
+  "keywords": [
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --recursive"
+  },
+  "author": "Patric Mathews",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "sync-request": "^3.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
