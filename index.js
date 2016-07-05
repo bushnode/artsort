@@ -5,13 +5,6 @@ var formats = require('./formats');
 
 /**
  * Converting Reddit data in JSON format to the appropriate data output format.
- *
- * @param json JSON string
- * @param strategy 'sort' or 'aggregate'
- * @param strategyParams {field: 'created_utc' | 'score', ascending: true | false}
- * @param format 'sql' or 'csv'
- * @param params possible {table: 'xxx', fields: [...]} for SQL or {delimiter: '?'} for CSV
- * @returns {string}
  */
 module.exports = function (json, strategy, strategyParams, format, params) {
   var data;
